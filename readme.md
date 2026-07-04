@@ -22,7 +22,7 @@ This is a native PS5 port of [Crispy Doom](https://github.com/fabiangreffrath/cr
 
 * [Music Pakcs](#music-packs).
 
-* [Porting Notes](porting-notes.md).
+* [Notes](#notes).
 
 * [Source](#source).
 
@@ -38,7 +38,7 @@ This is a native PS5 port of [Crispy Doom](https://github.com/fabiangreffrath/cr
 
 * Tested on (at this time) latest FW 12.70.
 
-* Portable and self-contained. All config files, save files, WAD files, temp files, and game engine executables are inside the `Crispy-Doom` folder you extract from the release, and you can put it anywhere on your system.
+* Portable and self-contained. All config files, save files, WAD files, temp files, and game engine executables are inside the `CrispyDoom` folder you extract from the release, and you can put it anywhere on your system.
 
 * Game engine specific folders, each game engine has it's own folder organizing your config files, save files, WADs, mods, music-packs, etc..
 
@@ -160,7 +160,7 @@ Note 2: These programs are supposed to be able to launch the game after saving t
 
 Note 1: Crispy Doom's design goal is "a limit-removing enhanced-resolution Doom source port based on Chocolate Doom". Chocolate Doom is a bug for bug compatible, modernized vanillia Doom expierence in itself. What does this mean for you and your mods? Make sure your mods either target vanilla Doom, and or explicitly state compatibility with Crispy Doom being supported. Great example of this is the [Deathless](https://www.doomworld.com/idgames/levels/doom/Ports/megawads/deathless) mod!
 
-Note 2: Mod support currently requires an explicit filepath to point to the `autoload` folder. This is currently unavoidable and one of the only things not self-containable by this port to the PS5. 
+Note 2: Mod support currently requires an explicit filepath to point to the `autoload` folder. This is currently unavoidable and one of the only things not self-containable by this port to the PS5.  You can change it to whatever you want though.
 
 Note 3: Crispy Doom uses an autoload folder. The idea is you create a subfolder in the autoload folder named after your WAD file. Then you put the mod in the subfolder named after the WAD.
 
@@ -178,7 +178,7 @@ The mod path is in the extraconfig file for your game, under `autoload_path` and
 
 ## Music Packs
 
-Note: Music pack support currently requires an explicit filepath to point to the `autoload` folder. This is currently unavoidable and besides mods the only thing not self-containable by this port to the PS5. 
+Note: Music pack support currently requires an explicit filepath to point to the `autoload` folder. This is currently unavoidable and besides mods the only thing not self-containable by this port to the PS5. You can change it to whatever you want though.
 
 `/mnt/usb0/homebrew/CrispyDoom/doom/music-packs` - for Doom 1 and Doom 2 engine games.
 
@@ -188,11 +188,10 @@ Note: Music pack support currently requires an explicit filepath to point to the
 
 `/mnt/usb0/homebrew/CrispyDoom/strife/music-packs` - for Strife engine games.
 
-## Limitations
+## Notes
 
-* Keyboard input while it works in-game, drops inputs if multiple different keys are pressed/released very fast or if many keys are pressed at the same time. This appears to be a limitation with the input polling rate/method SDl2 currently uses from the pacbrew-repo.
+* Due to [Issue #12](https://github.com/ps5-payload-dev/SDL/issues/12) with [ps5-payload-dev/SDL](https://github.com/ps5-payload-dev/SDL) using a USB keyboard in-game is not currently feasible. Use a controller, which works perfect!
 
-* Mod folder and music-packs folder is not yet possible to be self-contained like everything else.
 
 ## Source
 
